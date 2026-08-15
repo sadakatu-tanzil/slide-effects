@@ -1,0 +1,238 @@
+/* reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --color-primary: #45364b;
+  --color-secondary: #62466b;
+  --color-text: #8c93a8;
+  --color-white: #ffffff;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  color: var(--color-text);
+  background-color: #eee;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* row wrapper */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+}
+
+/* column padding */
+.row > [class*="col"] {
+  padding: 0 15px;
+}
+
+/* column sizing */
+.col-1 {
+  width: 8.3333%;
+}
+
+.col-2 {
+  width: 16.6666%;
+}
+
+.col-3 {
+  width: 25%;
+}
+
+.col-4 {
+  width: 33.3333%;
+}
+
+.col-5 {
+  width: 41.6666%;
+}
+
+.col-6 {
+  width: 50%;
+}
+
+.col-7 {
+  width: 58.3333%;
+}
+
+.col-8 {
+  width: 66.6666%;
+}
+
+.col-9 {
+  width: 75%;
+}
+
+.col-10 {
+  width: 83.3333%;
+}
+
+.col-11 {
+  width: 91.6666%;
+}
+
+.col-12 {
+  width: 100%;
+}
+
+.col {
+  max-width: 100%;
+  flex: 1;
+}
+
+/* custom css for project */
+
+img {
+  width: 100%;
+}
+
+img.cover {
+  object-fit: cover;
+}
+
+/* flex utilities */
+.flex {
+  display: flex;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.items-center {
+  align-items: center;
+}
+
+/* utilities */
+.pt-15 {
+  padding-top: 15px;
+}
+
+.py-50 {
+  padding: 50px 0;
+}
+
+/* text utilities */
+
+.text-24 {
+  font-size: 24px;
+}
+
+.text-32 {
+  font-size: 32px;
+}
+
+strong {
+  font-weight: 600;
+}
+
+figure.fig-width-500 {
+  max-width: 500px;
+}
+
+/* to top button */
+.to-top {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid var(--color-text);
+  color: var(--color-text);
+  background-color: var(--color-white);
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  text-decoration: none;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.125;
+  transition: opacity 0.25s;
+}
+
+.to-top:hover {
+  opacity: 1;
+}
+
+/* header section */
+.header {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  background-color: var(--color-secondary);
+}
+
+.header h1 {
+  font-size: 5rem;
+}
+
+.header p {
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+/* hero section */
+.hero {
+  background-color: var(--color-primary);
+  overflow: hidden;
+}
+
+/* sliding effects */
+.item--left {
+  transform: translateX(-50%) scale(0.75);
+}
+
+.item--right {
+  transform: translateX(50%) scale(0.75);
+}
+
+.item--left,
+.item--right {
+  opacity: 0;
+  transition:
+    opacity 0.25s,
+    transform 0.3s;
+}
+
+.item--left.active,
+.item--right.active {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+}
+
+/* scroll instruction animation */
+.scroll-instruction {
+  animation-duration: 0.75s;
+  animation-name: up-and-down;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes up-and-down {
+  0% {
+    transform: translateY(-10%);
+  }
+  50% {
+    transform: translateY(10%);
+  }
+  100% {
+    transform: translateY(-10%);
+  }
+}

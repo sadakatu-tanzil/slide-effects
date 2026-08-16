@@ -4,7 +4,7 @@
 
 const observer = new IntersectionObserver(slide, { threshold: 0.25 });
 
-function slide(entries, observer) {
+function slide(entries) {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
       entry.target.classList.add("active");
